@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Omkar Ranjit Jadhav - Cloud/DevOps Engineer with expertise in AWS, CI/CD pipelines, containerization, and secure deployment practices. Based in Pune, India." />
+  <meta name="keywords"
+    content="Omkar Ranjit Jadhav, Omkar DevOps, Omkar Cloud Engineer, DevOps Engineer Pune, Cloud Engineer India, AWS, Docker, Jenkins, Kubernetes, EKS, Prometheus, Grafana, CI/CD" />
+  <meta name="author" content="Omkar Ranjit Jadhav" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#faf8f4" />
+  <meta property="og:title" content="Omkar Ranjit Jadhav — Cloud/DevOps Engineer" />
+  <meta property="og:description"
+    content="Cloud/DevOps Engineer with expertise in AWS, CI/CD automation, containerization, and secure deployment practices." />
+  <meta property="og:type" content="website" />
+  <title>Omkar Ranjit Jadhav — Cloud/DevOps Engineer</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #faf8f4;
+      --cream2: #f3f0ea;
+      --parchment: #ede8df;
+      --warm-border: #e0d9ce;
+      --sage: #7a8c76;
+      --sage-light: #edf0eb;
+      --terracotta: #c4735a;
+      --terracotta-light: #f5ede9;
+      --ink: #2a2520;
+      --ink-mid: #6b6158;
+      --ink-light: #a09689;
+      --gold: #c9a96e;
+      --gold-light: #f7f1e6;
+      --white: #ffffff;
+      --shadow: 0 2px 24px rgba(42, 37, 32, 0.07);
+      --shadow-lg: 0 8px 48px rgba(42, 37, 32, 0.1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 900;
+      padding: 0 60px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(250, 248, 244, 0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--warm-border);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .nav-logo em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--terracotta);
+    }
+
+    .nav-cta {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 9px 20px;
+      background: var(--ink);
+      color: var(--cream);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--terracotta);
+    }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 68px;
+    }
+
+    .hero-left {
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--warm-border);
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: rise 0.7s 0.2s ease forwards;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--terracotta);
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(64px, 9vw, 110px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: rise 0.8s 0.35s ease forwards;
+    }
+
+    .hero-name strong {
+      font-weight: 700;
+    }
+
+    .hero-name .italic {
+      font-style: italic;
+      color: var(--terracotta);
+      font-weight: 700;
+    }
+
+    .hero-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--ink-mid);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: rise 0.8s 0.5s ease forwards;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      color: var(--ink-mid);
+      line-height: 1.8;
+      max-width: 440px;
+      margin-bottom: 44px;
+      opacity: 0;
+      animation: rise 0.8s 0.65s ease forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: rise 0.8s 0.8s ease forwards;
+    }
+
+    .btn-main {
+      padding: 13px 28px;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s;
+    }
+
+    .btn-main:hover {
+      background: var(--terracotta);
+    }
+
+    .btn-ghost {
+      padding: 13px 28px;
+      border: 1px solid var(--warm-border);
+      color: var(--ink-mid);
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    .hero-right {
+      background: var(--cream2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196, 115, 90, 0.07), transparent 70%);
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-stat {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--warm-border);
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      opacity: 0;
+      animation: rise 0.7s ease forwards;
+    }
+
+    .hero-stat:nth-child(1) { animation-delay: 0.5s; }
+    .hero-stat:nth-child(2) { animation-delay: 0.65s; }
+    .hero-stat:nth-child(3) { animation-delay: 0.8s; }
+    .hero-stat:nth-child(4) { animation-delay: 0.95s; }
+
+    .hero-stat:last-child {
+      border-bottom: none;
+    }
+
+    .stat-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      color: var(--terracotta);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--ink-mid);
+      line-height: 1.4;
+    }
+
+    .stat-label strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .location-badge {
+      margin-top: 36px;
+      padding: 14px 18px;
+      background: var(--white);
+      border: 1px solid var(--warm-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--ink-mid);
+    }
+
+    .loc-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(122, 140, 118, 0.2);
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1 }
+      50% { opacity: 0.4 }
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 96px 60px;
+      position: relative;
+    }
+
+    .sec-header {
+      margin-bottom: 56px;
+    }
+
+    .sec-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sec-tag::before {
+      content: '';
+      width: 22px;
+      height: 1px;
+      background: var(--terracotta);
+    }
+
+    .sec-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 300;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+
+    .sec-title em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    /* SKILLS */
+    #skills {
+      background: var(--white);
+      border-top: 1px solid var(--warm-border);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--warm-border);
+      border: 1px solid var(--warm-border);
+    }
+
+    .skill-cell {
+      background: var(--white);
+      padding: 30px 26px;
+      transition: background 0.25s;
+    }
+
+    .skill-cell:hover {
+      background: var(--terracotta-light);
+    }
+
+    .skill-cell-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .skill-cell-cat {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 10px;
+    }
+
+    .skill-cell-name {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 14px;
+      color: var(--ink);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      padding: 6px 12px;
+      background: var(--cream2);
+      color: var(--ink-mid);
+      border: 1px solid var(--warm-border);
+      letter-spacing: 0.5px;
+    }
+
+    .pill.accent {
+      background: var(--terracotta-light);
+      color: var(--terracotta);
+      border-color: rgba(196, 115, 90, 0.25);
+    }
+
+    .pill.sage {
+      background: var(--sage-light);
+      color: var(--sage);
+      border-color: rgba(122, 140, 118, 0.25);
+    }
+
+    .pill.gold {
+      background: var(--gold-light);
+      color: #8a6c3a;
+      border-color: rgba(201, 169, 110, 0.3);
+    }
+
+    /* EXPERIENCE */
+    #experience {
+      background: var(--cream);
+    }
+
+    .exp-row {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      border-top: 1px solid var(--warm-border);
+      padding: 44px 0;
+      opacity: 0;
+      transform: translateY(14px);
+      transition: all 0.55s ease;
+    }
+
+    .exp-row.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .exp-row:last-child {
+      border-bottom: 1px solid var(--warm-border);
+    }
+
+    .exp-meta {
+      padding-right: 36px;
+    }
+
+    .exp-period {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--ink-light);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .exp-badge {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      padding: 3px 8px;
+      letter-spacing: 1px;
+      background: var(--sage-light);
+      color: var(--sage);
+      border: 1px solid rgba(122, 140, 118, 0.3);
+      text-transform: uppercase;
+    }
+
+    .exp-badge.current {
+      background: var(--terracotta-light);
+      color: var(--terracotta);
+      border-color: rgba(196, 115, 90, 0.3);
+    }
+
+    .exp-company {
+      font-family: 'DM Mono', monospace;
+      font-size: 15px;
+      color: var(--terracotta);
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .exp-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 400;
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+
+    .exp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .exp-list li {
+      font-size: 22px;
+      color: var(--ink-mid);
+      line-height: 1.7;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .exp-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-size: 12px;
+    }
+
+    .exp-list li strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* PROJECTS */
+    #projects {
+      background: var(--cream2);
+      border-top: 1px solid var(--warm-border);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--warm-border);
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--terracotta);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--terracotta), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .project-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--ink-light);
+      letter-spacing: 2px;
+    }
+
+    .project-status {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      padding: 4px 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .status-prod {
+      background: var(--sage-light);
+      color: var(--sage);
+      border: 1px solid rgba(122, 140, 118, 0.3);
+    }
+
+    .status-ml {
+      background: var(--gold-light);
+      color: #8a6c3a;
+      border: 1px solid rgba(201, 169, 110, 0.3);
+    }
+
+    .project-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .project-desc {
+      font-size: 18px;
+      color: var(--ink-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    /* ACHIEVEMENTS */
+    #achievements {
+      background: var(--white);
+      border-top: 1px solid var(--warm-border);
+    }
+
+    .ach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--warm-border);
+      border: 1px solid var(--warm-border);
+    }
+
+    .ach-card {
+      background: var(--white);
+      padding: 40px 32px;
+      transition: background 0.25s;
+    }
+
+    .ach-card:hover {
+      background: var(--terracotta-light);
+    }
+
+    .ach-icon {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .ach-title {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .ach-desc {
+      font-size: 18px;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    #contact .sec-title {
+      color: var(--cream);
+    }
+
+    #contact .sec-tag {
+      color: var(--gold);
+    }
+
+    #contact .sec-tag::before {
+      background: var(--gold);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+      margin-top: 56px;
+    }
+
+    .contact-blurb {
+      font-size: 18px;
+      color: rgba(250, 248, 244, 0.6);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-decoration: none;
+      color: rgba(250, 248, 244, 0.75);
+      transition: all 0.2s;
+      font-size: 16px;
+    }
+
+    .contact-row:hover {
+      background: rgba(196, 115, 90, 0.15);
+      color: var(--cream);
+      border-color: rgba(196, 115, 90, 0.4);
+    }
+
+    .contact-row-icon {
+      font-size: 18px;
+      width: 26px;
+      text-align: center;
+    }
+
+    .availability-box {
+      padding: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      margin-bottom: 20px;
+    }
+
+    .avail-dot {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .avail-circle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #7cb87a;
+      animation: blink 2s infinite;
+    }
+
+    .avail-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+
+    .avail-desc {
+      font-size: 18px;
+      color: rgba(250, 248, 244, 0.5);
+      line-height: 1.6;
+    }
+
+    .about-extra {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .about-item {
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .about-item-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .about-item-val {
+      font-size: 16px;
+      color: rgba(250, 248, 244, 0.6);
+    }
+
+    /* TOOLS */
+    #tools {
+      background: var(--cream2);
+      border-top: 1px solid var(--warm-border);
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
+    }
+
+    .tool-card {
+      background: var(--white);
+      border: 1px solid var(--warm-border);
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tool-card:hover {
+      background: var(--terracotta-light);
+      border-color: var(--terracotta);
+      transform: translateY(-2px);
+    }
+
+    .tool-icon {
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .tool-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--ink);
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      padding: 20px 60px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      color: rgba(250, 248, 244, 0.3);
+      letter-spacing: 1px;
+    }
+
+    footer span {
+      color: var(--terracotta);
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      #hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 60px 24px 40px; border-right: none; border-bottom: 1px solid var(--warm-border); }
+      .hero-right { padding: 40px 24px 60px; }
+      section { padding: 70px 24px; }
+      .skills-grid, .ach-grid { grid-template-columns: 1fr; }
+      .exp-row { grid-template-columns: 1fr; gap: 14px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-logo">Omkar Ranjit <em>Jadhav</em></div>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:omkar.jadhav7804@gmail.com" class="nav-cta">Hire Me</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" style="padding:0;">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Cloud / DevOps Engineer</div>
+      <h1 class="hero-name"><strong>Omkar</strong><br /><strong><span class="italic">Jadhav</span></strong></h1>
+      <p class="hero-title">AWS · CI/CD · CONTAINERIZATION · CLOUD INFRASTRUCTURE</p>
+      <p class="hero-desc">Cloud/DevOps Engineer with hands-on experience in AWS infrastructure, CI/CD automation, containerization, and secure deployment practices. Building scalable, reliable, and high-availability cloud solutions.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-main">See Projects</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <!-- Profile photo placeholder — replace the src below with your actual photo URL -->
+      <div style="width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,var(--terracotta-light),var(--parchment));border:3px solid var(--warm-border);margin:0 auto 32px auto;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 4px 32px rgba(42,37,32,0.10);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </svg>
+      </div>
+      <!-- To add your photo: replace the div above with:
+           <img src="YOUR_PHOTO_URL" alt="Omkar Ranjit Jadhav" style="width:220px;height:220px;object-fit:cover;border-radius:50%;box-shadow:0 4px 32px rgba(42,37,32,0.10);margin:0 auto 32px auto;display:block;" />
+      -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="stat-big">2</div>
+          <div class="stat-label"><strong>Companies</strong>Pearlstone Technology &amp; Hudl India</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-big">2</div>
+          <div class="stat-label"><strong>AWS Certifications</strong>Cloud Quest &amp; Cloud Essentials</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-big">EKS</div>
+          <div class="stat-label"><strong>Kubernetes on AWS</strong>Production Deployments</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-big">8/10</div>
+          <div class="stat-label"><strong>M.Sc CGPA</strong>Computer Science, SPPU</div>
+        </div>
+      </div>
+      <div class="location-badge">
+        <div class="loc-dot"></div>
+        Pune, India — Open to Cloud/DevOps opportunities
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="sec-header">
+      <div class="sec-tag">01 — Expertise</div>
+      <h2 class="sec-title">Technical <em>Stack</em></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-cell">
+        <div class="skill-cell-icon">☁️</div>
+        <div class="skill-cell-cat">Cloud Services</div>
+        <div class="skill-cell-name">AWS Infrastructure</div>
+        <div class="pill-row">
+          <span class="pill accent">IAM</span>
+          <span class="pill accent">EC2</span>
+          <span class="pill accent">S3</span>
+          <span class="pill accent">VPC</span>
+          <span class="pill accent">ELB</span>
+          <span class="pill accent">Auto Scaling</span>
+          <span class="pill accent">Route 53</span>
+          <span class="pill accent">CloudFront</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-icon">🐳</div>
+        <div class="skill-cell-cat">Containers & Orch.</div>
+        <div class="skill-cell-name">Docker & Kubernetes</div>
+        <div class="pill-row">
+          <span class="pill accent">Docker</span>
+          <span class="pill accent">Amazon EKS</span>
+          <span class="pill">Docker Compose</span>
+          <span class="pill">Trivy</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-icon">🔁</div>
+        <div class="skill-cell-cat">CI/CD & Automation</div>
+        <div class="skill-cell-name">Delivery Pipelines</div>
+        <div class="pill-row">
+          <span class="pill sage">Jenkins</span>
+          <span class="pill sage">GitHub Webhooks</span>
+          <span class="pill sage">Maven</span>
+          <span class="pill">Git</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-icon">📊</div>
+        <div class="skill-cell-cat">Monitoring & Obs.</div>
+        <div class="skill-cell-name">Reliability Engineering</div>
+        <div class="pill-row">
+          <span class="pill gold">Prometheus</span>
+          <span class="pill gold">Grafana</span>
+          <span class="pill">Amazon SNS</span>
+          <span class="pill">SQS</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-icon">🔐</div>
+        <div class="skill-cell-cat">Security & Networking</div>
+        <div class="skill-cell-name">Secure Cloud Environments</div>
+        <div class="pill-row">
+          <span class="pill accent">SonarQube</span>
+          <span class="pill">SSL/TLS</span>
+          <span class="pill">Security Groups</span>
+          <span class="pill">HTTPS</span>
+          <span class="pill">SSH</span>
+        </div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-cell-icon">⌨️</div>
+        <div class="skill-cell-cat">Servers & OS</div>
+        <div class="skill-cell-name">Infrastructure & Servers</div>
+        <div class="pill-row">
+          <span class="pill accent">Linux</span>
+          <span class="pill">Apache Tomcat 8</span>
+          <span class="pill">NGINX</span>
+          <span class="pill">Amazon RDS</span>
+          <span class="pill">DynamoDB</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS & TECHNOLOGIES -->
+  <section id="tools">
+    <div class="sec-header">
+      <div class="sec-tag">01a — Tools</div>
+      <h2 class="sec-title">Tech <em>Arsenal</em></h2>
+    </div>
+    <div class="tools-grid">
+      <!-- AWS -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.5 23.5l-3 7.5h2l.7-2h3.1l.7 2h2l-3-7.5h-2.5zm.4 4l1-2.8 1 2.8h-2zM20 23.5l-1.8 5.3-1.8-5.3h-2l2.8 7.5h2l2.8-7.5h-2zM26.5 27c0-.8.5-1.2 1.3-1.2.6 0 1.1.2 1.7.6l.9-1.4c-.8-.6-1.7-.9-2.7-.9-1.8 0-3.1 1-3.1 2.8 0 3.3 4.3 2.4 4.3 4 0 .9-.6 1.3-1.5 1.3-.8 0-1.5-.3-2.1-.9l-1 1.4c.9.8 2 1.2 3.1 1.2 2 0 3.3-1 3.3-3 0-3.3-4.2-2.5-4.2-3.9z" fill="#FF9900"/>
+            <path d="M8 15c0-4.4 3.6-8 8-8s8 3.6 8 8c0 .5-.1 1-.2 1.5 1.4.3 2.4 1.5 2.4 3 0 1.7-1.3 3-3 3H9.5C7.6 22.5 6 21 6 19c0-1.8 1.3-3.3 3-3.6-.1-.4 0-.9 0-1.4z" fill="#FF9900" opacity=".2"/>
+            <path d="M8 15c0-4.4 3.6-8 8-8s8 3.6 8 8c0 .5-.1 1-.2 1.5 1.4.3 2.4 1.5 2.4 3 0 1.7-1.3 3-3 3H9.5C7.6 22.5 6 21 6 19c0-1.8 1.3-3.3 3-3.6" fill="none" stroke="#FF9900" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="tool-name">AWS</div>
+      </div>
+      <!-- Docker -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="14" width="6" height="5" rx="1" fill="#2496ED"/>
+            <rect x="12" y="14" width="6" height="5" rx="1" fill="#2496ED"/>
+            <rect x="19" y="14" width="6" height="5" rx="1" fill="#2496ED"/>
+            <rect x="12" y="8" width="6" height="5" rx="1" fill="#2496ED"/>
+            <rect x="19" y="8" width="6" height="5" rx="1" fill="#2496ED"/>
+            <path d="M32 18c-1-1-3-1.5-4.5-1.2-.3-2-1.5-3.8-3.5-4.8l-.7-.4-.4.7c-.7 1.3-1 3-.7 4.5-1 .5-2 .6-3 .6H3.5l-.1.7c-.2 1.5.1 4 1.8 5.7 1.4 1.4 3.4 2.2 6.3 2.2 6 0 10.5-2.8 12.5-7.8 1.4.1 4.5 0 5.5-3l.2-.7-.7-.3z" fill="#2496ED"/>
+          </svg>
+        </div>
+        <div class="tool-name">Docker</div>
+      </div>
+      <!-- Kubernetes -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="20,4 34,12 34,28 20,36 6,28 6,12" fill="#326CE5" opacity=".15"/>
+            <polygon points="20,4 34,12 34,28 20,36 6,28 6,12" fill="none" stroke="#326CE5" stroke-width="1.5"/>
+            <circle cx="20" cy="20" r="4" fill="#326CE5"/>
+            <line x1="20" y1="4" x2="20" y2="10" stroke="#326CE5" stroke-width="1.5"/>
+            <line x1="20" y1="30" x2="20" y2="36" stroke="#326CE5" stroke-width="1.5"/>
+            <line x1="6" y1="12" x2="12" y2="15" stroke="#326CE5" stroke-width="1.5"/>
+            <line x1="28" y1="25" x2="34" y2="28" stroke="#326CE5" stroke-width="1.5"/>
+            <line x1="34" y1="12" x2="28" y2="15" stroke="#326CE5" stroke-width="1.5"/>
+            <line x1="12" y1="25" x2="6" y2="28" stroke="#326CE5" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="tool-name">Kubernetes</div>
+      </div>
+      <!-- Jenkins -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="20" rx="14" ry="16" fill="#D33833" opacity=".1"/>
+            <ellipse cx="20" cy="20" rx="14" ry="16" fill="none" stroke="#D33833" stroke-width="1.5"/>
+            <circle cx="16" cy="17" r="2" fill="#D33833"/>
+            <circle cx="24" cy="17" r="2" fill="#D33833"/>
+            <path d="M14 24 Q20 29 26 24" fill="none" stroke="#D33833" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M16 8 Q20 4 24 8" fill="none" stroke="#D33833" stroke-width="1.5"/>
+            <rect x="18" y="3" width="4" height="3" rx="1" fill="#D33833"/>
+          </svg>
+        </div>
+        <div class="tool-name">Jenkins</div>
+      </div>
+      <!-- GitHub -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M20 4C11.16 4 4 11.16 4 20c0 7.08 4.59 13.09 10.96 15.21.8.15 1.09-.35 1.09-.77 0-.38-.01-1.39-.02-2.73-4.45.97-5.39-2.14-5.39-2.14-.73-1.85-1.78-2.34-1.78-2.34-1.45-.99.11-.97.11-.97 1.61.11 2.45 1.65 2.45 1.65 1.43 2.44 3.74 1.74 4.65 1.33.15-1.03.56-1.74 1.02-2.14-3.55-.4-7.28-1.77-7.28-7.9 0-1.74.62-3.17 1.64-4.28-.16-.4-.71-2.02.16-4.22 0 0 1.34-.43 4.38 1.63A15.2 15.2 0 0120 10.8c1.35.01 2.71.18 3.98.54 3.04-2.06 4.37-1.63 4.37-1.63.87 2.2.32 3.82.16 4.22 1.02 1.11 1.64 2.54 1.64 4.28 0 6.14-3.74 7.49-7.3 7.89.57.49 1.08 1.47 1.08 2.96 0 2.14-.02 3.86-.02 4.38 0 .43.29.93 1.1.77C31.42 33.08 36 27.07 36 20c0-8.84-7.16-16-16-16z" fill="#2a2520"/>
+          </svg>
+        </div>
+        <div class="tool-name">GitHub</div>
+      </div>
+      <!-- Prometheus -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="14" fill="#E6522C" opacity=".12"/>
+            <circle cx="20" cy="20" r="14" fill="none" stroke="#E6522C" stroke-width="1.5"/>
+            <circle cx="20" cy="20" r="5" fill="#E6522C"/>
+            <line x1="20" y1="6" x2="20" y2="12" stroke="#E6522C" stroke-width="2" stroke-linecap="round"/>
+            <line x1="20" y1="28" x2="20" y2="34" stroke="#E6522C" stroke-width="2" stroke-linecap="round"/>
+            <line x1="6" y1="20" x2="12" y2="20" stroke="#E6522C" stroke-width="2" stroke-linecap="round"/>
+            <line x1="28" y1="20" x2="34" y2="20" stroke="#E6522C" stroke-width="2" stroke-linecap="round"/>
+            <line x1="10.1" y1="10.1" x2="14.3" y2="14.3" stroke="#E6522C" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="25.7" y1="25.7" x2="29.9" y2="29.9" stroke="#E6522C" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="29.9" y1="10.1" x2="25.7" y2="14.3" stroke="#E6522C" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="14.3" y1="25.7" x2="10.1" y2="29.9" stroke="#E6522C" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="tool-name">Prometheus</div>
+      </div>
+      <!-- Grafana -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="14" fill="#F46800" opacity=".12"/>
+            <circle cx="20" cy="20" r="14" fill="none" stroke="#F46800" stroke-width="1.5"/>
+            <polyline points="8,26 13,18 17,22 22,14 27,20 32,16" fill="none" stroke="#F46800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="tool-name">Grafana</div>
+      </div>
+      <!-- SonarQube -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 30 Q10 10 30 10" fill="none" stroke="#549DD0" stroke-width="3" stroke-linecap="round"/>
+            <path d="M10 30 Q20 30 20 20" fill="none" stroke="#549DD0" stroke-width="2.5" stroke-linecap="round" opacity=".6"/>
+            <path d="M10 30 Q15 30 15 25" fill="none" stroke="#549DD0" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+          </svg>
+        </div>
+        <div class="tool-name">SonarQube</div>
+      </div>
+      <!-- Nginx -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="20,4 34,30 6,30" fill="#009900" opacity=".15"/>
+            <polygon points="20,4 34,30 6,30" fill="none" stroke="#009900" stroke-width="1.5"/>
+            <line x1="12" y1="28" x2="20" y2="12" stroke="#009900" stroke-width="2" stroke-linecap="round"/>
+            <line x1="20" y1="12" x2="28" y2="28" stroke="#009900" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="28" x2="28" y2="28" stroke="#009900" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="tool-name">Nginx</div>
+      </div>
+      <!-- Linux -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="20" cy="16" rx="8" ry="10" fill="#FFD700" opacity=".2"/>
+            <ellipse cx="20" cy="16" rx="8" ry="10" fill="none" stroke="#E0B800" stroke-width="1.5"/>
+            <circle cx="17" cy="14" r="1.5" fill="#E0B800"/>
+            <circle cx="23" cy="14" r="1.5" fill="#E0B800"/>
+            <path d="M17 20 Q20 23 23 20" fill="none" stroke="#E0B800" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M14 26 Q12 32 16 33 Q20 34 20 30" fill="none" stroke="#E0B800" stroke-width="1.5"/>
+            <path d="M26 26 Q28 32 24 33 Q20 34 20 30" fill="none" stroke="#E0B800" stroke-width="1.5"/>
+            <path d="M16 26 L14 30" stroke="#E0B800" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M24 26 L26 30" stroke="#E0B800" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="tool-name">Linux</div>
+      </div>
+      <!-- Git -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="32" height="32" rx="6" fill="#F05032" opacity=".12"/>
+            <rect x="4" y="4" width="32" height="32" rx="6" fill="none" stroke="#F05032" stroke-width="1.5"/>
+            <path d="M34.6 18.3L21.7 5.4a2 2 0 00-2.8 0l-2.8 2.8 3.5 3.5a2.4 2.4 0 013 3l3.4 3.4a2.4 2.4 0 11-1.4 1.4l-3.2-3.2v8.3a2.4 2.4 0 11-2 0V15.7a2.4 2.4 0 01-1.3-3.1L14.7 9 5.4 18.3a2 2 0 000 2.8l13 13a2 2 0 002.8 0l13.3-13.3a2 2 0 000-2.5z" fill="#F05032"/>
+          </svg>
+        </div>
+        <div class="tool-name">Git</div>
+      </div>
+      <!-- Maven -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="28" height="28" rx="4" fill="#C71A36" opacity=".12"/>
+            <rect x="6" y="6" width="28" height="28" rx="4" fill="none" stroke="#C71A36" stroke-width="1.5"/>
+            <text x="9" y="24" font-family="Georgia,serif" font-size="11" font-weight="bold" fill="#C71A36">mvn</text>
+          </svg>
+        </div>
+        <div class="tool-name">Maven</div>
+      </div>
+      <!-- Trivy -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="20,5 35,14 35,26 20,35 5,26 5,14" fill="#1904DA" opacity=".12"/>
+            <polygon points="20,5 35,14 35,26 20,35 5,26 5,14" fill="none" stroke="#1904DA" stroke-width="1.5"/>
+            <path d="M14 20l4 4 8-8" fill="none" stroke="#1904DA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="tool-name">Trivy</div>
+      </div>
+      <!-- Route 53 -->
+      <div class="tool-card">
+        <div class="tool-icon">
+          <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="14" fill="#FF9900" opacity=".12"/>
+            <circle cx="20" cy="20" r="14" fill="none" stroke="#FF9900" stroke-width="1.5"/>
+            <circle cx="20" cy="20" r="5" fill="none" stroke="#FF9900" stroke-width="1.5"/>
+            <line x1="20" y1="6" x2="20" y2="34" stroke="#FF9900" stroke-width="1"/>
+            <line x1="6" y1="20" x2="34" y2="20" stroke="#FF9900" stroke-width="1"/>
+            <ellipse cx="20" cy="20" rx="14" ry="7" fill="none" stroke="#FF9900" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="tool-name">Route 53</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="sec-header">
+      <div class="sec-tag">02 — History</div>
+      <h2 class="sec-title">Work <em>Experience</em></h2>
+    </div>
+    <div>
+      <div class="exp-row">
+        <div class="exp-meta">
+          <div class="exp-period">Jun 2025 – Feb 2026</div>
+          <div class="exp-badge">Full-time</div>
+        </div>
+        <div>
+          <div class="exp-company">Hudl India Private Limited</div>
+          <div class="exp-role">Analyst</div>
+          <ul class="exp-list">
+            <li>Deployed and managed web applications on <strong>AWS EC2</strong> instances ensuring high availability.</li>
+            <li>Created and managed <strong>Docker containers</strong> for packaging and deploying applications across environments.</li>
+            <li>Scanned Docker images using <strong>Trivy</strong> to detect and fix security vulnerabilities before deployment.</li>
+            <li>Managed <strong>S3 buckets</strong> for storing application data, logs, and static assets.</li>
+            <li>Supported CI/CD pipeline execution to automate application builds and deployments.</li>
+            <li>Worked with development teams to troubleshoot deployment issues and resolve production bugs.</li>
+            <li>Maintained <strong>VPC, security groups</strong>, and network configurations for secure cloud environments.</li>
+            <li>Deployed the <strong>Ball Time volleyball application</strong> panel on AWS using Docker containers.</li>
+            <li>Participated in team meetings and collaborated with global teams to deliver project requirements.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-meta">
+          <div class="exp-period">Jul 2024 – Jun 2025</div>
+          <div class="exp-badge">Full-time</div>
+        </div>
+        <div>
+          <div class="exp-company">Pearlstone Technology</div>
+          <div class="exp-role">Cloud Engineer</div>
+          <ul class="exp-list">
+            <li>Managed AWS resources including <strong>EC2, S3, VPC, IAM, ELB, Auto Scaling, Route 53</strong> for deploying web applications.</li>
+            <li>Deployed and monitored <strong>React-based web applications</strong> on EC2 instances, ensuring high availability and performance.</li>
+            <li>Built <strong>Docker containers and images</strong> to deploy applications across environments.</li>
+            <li>Assisted in creating <strong>Jenkins CI/CD pipelines</strong> to automate application builds and deployments.</li>
+            <li>Integrated <strong>GitHub webhooks</strong> to trigger automatic builds on code updates.</li>
+            <li>Monitored server and application performance, troubleshooting issues for uptime.</li>
+            <li>Optimized cloud configurations and resource usage to improve performance and reduce costs.</li>
+            <li>Collaborated with team members to troubleshoot production issues and implement improvements.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="sec-header">
+      <div class="sec-tag">03 — Portfolio</div>
+      <h2 class="sec-title">Key <em>Projects</em></h2>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-num">Project 01</span>
+          <span class="project-status status-prod">AWS EKS</span>
+        </div>
+        <div class="project-title">Three-Tier Full Stack App with CI/CD on AWS EKS</div>
+        <div class="project-desc">Designed and implemented a three-tier full stack application (Frontend, Backend, Database). Built a CI/CD pipeline using Jenkins, containerized the app with Docker, performed code quality analysis with SonarQube, and integrated Trivy security scanning. Deployed and managed on Amazon EKS for scalable production delivery.</div>
+        <div class="project-stack">
+          <span class="pill accent">AWS EKS</span>
+          <span class="pill accent">Docker</span>
+          <span class="pill sage">Jenkins</span>
+          <span class="pill">SonarQube</span>
+          <span class="pill">Trivy</span>
+          <span class="pill">GitHub</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-num">Project 02</span>
+          <span class="project-status status-ml">Monitoring</span>
+        </div>
+        <div class="project-title">Cloud Native Web App: AWS + Docker + Route 53 + Prometheus + Grafana</div>
+        <div class="project-desc">Deployed a trekking application on Amazon EC2, containerized with Docker and Docker Compose. Configured domain mapping via Route 53, implemented metrics collection with Prometheus, and visualized system health on Grafana dashboards. Enhanced security with SSL certificates and AWS access controls.</div>
+        <div class="project-stack">
+          <span class="pill accent">EC2</span>
+          <span class="pill accent">Docker Compose</span>
+          <span class="pill accent">Route 53</span>
+          <span class="pill gold">Prometheus</span>
+          <span class="pill gold">Grafana</span>
+          <span class="pill">SSL/TLS</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS & EDUCATION -->
+  <section id="achievements">
+    <div class="sec-header">
+      <div class="sec-tag">04 — Recognition</div>
+      <h2 class="sec-title">Achievements <em>&amp; Education</em></h2>
+    </div>
+    <div class="ach-grid">
+      <div class="ach-card">
+        <div class="ach-icon">🔐</div>
+        <div class="ach-title">Security-First DevOps</div>
+        <div class="ach-desc">Implemented Trivy image scanning and SonarQube code analysis in CI/CD pipelines to catch vulnerabilities before production.</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">☁️</div>
+        <div class="ach-title">AWS Certified</div>
+        <div class="ach-desc">AWS Cloud Quest: Cloud Practitioner and AWS Learning: Cloud Essentials certifications from Cloudblitz Technology, Pune.</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">🎓</div>
+        <div class="ach-title">M.Sc Computer Science</div>
+        <div class="ach-desc">Graduated from Savitribai Phule Pune University (2022 – 2024) with a CGPA of 8/10.</div>
+      </div>
+      <div class="ach-card">
+        <div class="ach-icon">🏅</div>
+        <div class="ach-title">B.Sc Computer Science</div>
+        <div class="ach-desc">Graduated from Savitribai Phule Pune University (2019 – 2022) with a CGPA of 7.89/10.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="sec-header" style="margin-bottom:0;">
+      <div class="sec-tag">05 — Connect</div>
+      <h2 class="sec-title">Let's Work <em>Together</em></h2>
+    </div>
+    <div class="contact-layout">
+      <div>
+        <p class="contact-blurb">Open to Cloud/DevOps Engineer roles. I bring hands-on experience deploying and managing AWS infrastructure, building CI/CD pipelines with Jenkins, containerizing applications with Docker, and implementing monitoring with Prometheus and Grafana.</p>
+        <div class="contact-detail">
+          <a href="mailto:omkar.jadhav7804@gmail.com" class="contact-row"><span class="contact-row-icon">✉️</span>omkar.jadhav7804@gmail.com</a>
+          <a href="tel:+918698231143" class="contact-row"><span class="contact-row-icon">📞</span>+91 86982 31143</a>
+          <a href="https://linkedin.com" class="contact-row" target="_blank" rel="noopener noreferrer"><span class="contact-row-icon">💼</span>LinkedIn — Omkar Ranjit Jadhav</a>
+          <a href="https://github.com" class="contact-row" target="_blank" rel="noopener noreferrer"><span class="contact-row-icon">🐙</span>GitHub — Projects &amp; Code</a>
+        </div>
+      </div>
+      <div>
+        <div class="availability-box">
+          <div class="avail-dot">
+            <div class="avail-circle"></div>
+            <span style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(250,248,244,0.45);letter-spacing:2px;">AVAILABLE NOW</span>
+          </div>
+          <div class="avail-title">Open to New Opportunities</div>
+          <div class="avail-desc">Based in Pune, India. Seeking Cloud/DevOps Engineer positions.</div>
+        </div>
+        <div class="about-extra">
+          <div class="about-item">
+            <div class="about-item-label">Education</div>
+            <div class="about-item-val">M.Sc — Computer Science (2024) &nbsp;·&nbsp; SPPU Pune<br />B.Sc — Computer Science (2022) &nbsp;·&nbsp; SPPU Pune</div>
+          </div>
+          <div class="about-item">
+            <div class="about-item-label">AWS Certifications</div>
+            <div class="about-item-val">Cloud Quest: Cloud Practitioner &nbsp;·&nbsp; Cloud Essentials</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 <span>Omkar Ranjit Jadhav</span> — Cloud/DevOps Engineer</p>
+    <p>Crafted with care · Pune, India</p>
+  </footer>
+
+  <script>
+    const rows = document.querySelectorAll('.exp-row');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    rows.forEach(row => observer.observe(row));
+  </script>
+</body>
+
+</html>
